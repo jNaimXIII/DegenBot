@@ -1,3 +1,1 @@
 # DegenBot
-
-DegenBot landing page.
