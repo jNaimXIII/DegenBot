@@ -1,0 +1,147 @@
+$accent-color: #f00031;
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 2.5rem 4rem;
+
+  @media (max-width: 512px) {
+    padding: 2.5rem;
+  }
+
+  .brand-logo {
+    display: block;
+
+    @media (max-width: 512px) {
+      width: 150px;
+    }
+  }
+
+  .site-nav {
+    .mobile-toggle-button {
+      display: none;
+      background: transparent;
+      border: transparent;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 2rem;
+
+      @media (max-width: 1171px) {
+        display: block;
+      }
+
+      @media (max-width: 512px) {
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .site-nav ul,
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    gap: 2rem;
+
+    align-items: center;
+
+    li {
+      a {
+        font-family: "Integral CF", sans-serif;
+        font-size: 0.9rem;
+
+        color: white;
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: #f00031;
+        }
+      }
+
+      .dapp-button {
+        font-family: "Integral CF", sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        border: none;
+
+        color: white;
+
+        // background: linear-gradient(
+        //   90deg,
+        //   rgba(255, 255, 255, 1) 0%,
+        //   rgba(0, 0, 0, 1) 50%,
+        //   rgba(255, 255, 255, 1) 100%
+        // );
+        // padding: 1px;
+
+        padding: 0;
+
+        // border-radius: 2.125rem;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0px 0px 16px 4px rgba($accent-color, 0.5);
+          cursor: pointer;
+        }
+
+        span {
+          display: block;
+          font-size: 0.9rem;
+
+          background: $accent-color;
+          padding: 0.8125rem 1.5rem;
+
+          // border-radius: 2.125rem;
+        }
+      }
+    }
+  }
+
+  .site-nav ul {
+    @media (max-width: 1171px) {
+      display: none;
+    }
+  }
+
+  .mobile-nav {
+    width: 100%;
+    display: none;
+
+    @media (max-width: 1171px) {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+      text-align: center;
+
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.site-header.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.4rem 1rem;
+  backdrop-filter: blur(5px);
+}

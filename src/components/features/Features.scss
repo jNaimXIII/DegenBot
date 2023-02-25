@@ -1,0 +1,15 @@
+.features-section {
+  // margin: 12rem auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  max-width: 1376px;
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5rem;
+
+    margin-top: 6rem;
+  }
+}

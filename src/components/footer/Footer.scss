@@ -1,0 +1,24 @@
+$accent-color: #f00031;
+
+.site-footer {
+  padding: 0.7rem;
+  background: black;
+
+  border-top: 2px solid $accent-color;
+
+  p {
+    font-family: "Integral CF", sans-serif;
+    font-size: 0.7rem;
+    line-height: 101%;
+
+    text-align: center;
+
+    margin: 0;
+
+    color: $accent-color;
+
+    a {
+      color: white;
+    }
+  }
+}

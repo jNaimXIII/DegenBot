@@ -1,0 +1,48 @@
+.security-section {
+  // margin: 12rem auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  .security-prop-image {
+    display: block;
+    margin: 3rem auto;
+  }
+
+  .content {
+    color: white;
+
+    h4 {
+      font-family: "Integral CF", sans-serif;
+      font-size: 2.2rem;
+
+      text-align: center;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .info {
+      p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.05rem;
+
+        line-height: 150.5%;
+        text-align: center;
+
+        max-width: 64ch;
+
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .actions {
+      max-width: 35rem;
+      margin: 4.5rem auto;
+    }
+  }
+}

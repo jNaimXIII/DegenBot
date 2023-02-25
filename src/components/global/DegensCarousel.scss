@@ -1,0 +1,42 @@
+$accent-color: #ff0031;
+
+.degens-carousel-section {
+  border-top: 5px solid $accent-color;
+  border-bottom: 5px solid $accent-color;
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+
+  max-width: 100vw;
+
+  padding: 1.4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
+
+  // transform: rotateZ(2.4deg);
+
+  .degens-text {
+    font-family: "Integral CF", sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+
+    color: white;
+
+    margin: 0 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 512px) {
+      font-size: 0.8rem;
+    }
+
+    .highlighted-text {
+      color: $accent-color;
+      font-weight: bold;
+    }
+  }
+}

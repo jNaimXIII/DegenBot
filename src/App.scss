@@ -1,0 +1,18 @@
+main {
+  // padding: 0.4rem;
+  margin: 0 auto;
+
+  // CAUTION: i really didn't want to resort to this
+  overflow-x: hidden;
+
+  section {
+    max-width: 1380px;
+    margin: 0 auto;
+
+    padding: 0.5rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

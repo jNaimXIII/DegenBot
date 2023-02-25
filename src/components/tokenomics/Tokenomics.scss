@@ -1,0 +1,55 @@
+$accent-color: #f00031;
+
+.tokenomics-section {
+  // margin: 12rem auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  .degen-impact-text {
+    font-family: "Integral CF", sans-serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: $accent-color;
+
+    margin-top: 3.75rem;
+    margin-bottom: 5rem;
+
+    text-align: center;
+    line-height: 90.5%;
+  }
+
+  .info {
+    color: white;
+    font-family: "Poppins";
+    text-align: center;
+    font-size: 1.35rem;
+
+    @media (max-width: 986px) {
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0;
+      line-height: 159.5%;
+    }
+
+    .highlighted-text {
+      color: $accent-color;
+      font-weight: bold;
+    }
+
+    .small {
+      font-size: 1rem;
+    }
+  }
+
+  .tokenomics-prop-image {
+    display: block;
+
+    margin: 6rem auto 0;
+
+    @media (max-width: 986px) {
+      width: 100%;
+    }
+  }
+}

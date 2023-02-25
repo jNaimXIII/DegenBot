@@ -1,0 +1,29 @@
+.portal {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: black;
+
+  padding: 6rem 0;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .portal-prop-image {
+      width: 100%;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
+}

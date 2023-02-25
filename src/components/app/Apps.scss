@@ -1,0 +1,63 @@
+$accent-color: #f00031;
+
+.apps-section {
+  margin: 12rem auto;
+  padding: 0 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 986px) {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .content {
+    .content-section {
+      margin-bottom: 3rem;
+
+      h3 {
+        font-family: "Integral CF", sans-serif;
+        color: $accent-color;
+        font-size: 1.25rem;
+
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+
+      p {
+        font-family: "Poppins", sans-serif;
+        color: white;
+        max-width: 64ch;
+        font-size: 0.9rem;
+      }
+
+      .store-links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        button {
+          background: transparent;
+          border: transparent;
+          padding: 0;
+          margin: 0;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .apps-prop-image {
+    display: block;
+  }
+}

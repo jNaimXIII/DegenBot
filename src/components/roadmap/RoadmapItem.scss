@@ -1,0 +1,62 @@
+$accent-color: #f00031;
+$dimmed-text: #767676;
+
+.roadmap-item {
+  border-radius: 4rem;
+  border: 3px solid $accent-color;
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+
+  color: white;
+  padding: 3.5rem;
+
+  .roadmap-tag,
+  .roadmap-label {
+    font-family: "Integral CF", sans-serif;
+    line-height: 115.5%;
+
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.15rem;
+    }
+  }
+
+  .roadmap-tag {
+    font-size: 1.35rem;
+    color: $dimmed-text;
+  }
+
+  .roadmap-label {
+    font-size: 1.8rem;
+    color: $accent-color;
+  }
+
+  // .roadmap-description {
+  //   font-family: "Poppins", sans-serif;
+  //   font-size: 1.05rem;
+  //   line-height: 149%;
+  //
+  //   @media (max-width: 768px) {
+  //     font-size: 1rem;
+  //   }
+  //
+  //   text-transform: capitalize;
+  // }
+
+  .roadmap-list {
+    padding-left: 1.125rem;
+    list-style-image: url("../../assets/images/icons/check_dark.svg");
+
+    .roadmap-list-item {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.8rem;
+    }
+
+    .roadmap-list-item.checked {
+      list-style-image: url("../../assets/images/icons/check_green.svg");
+    }
+  }
+}

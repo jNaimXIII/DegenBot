@@ -1,0 +1,42 @@
+$accent-color: #f00031;
+
+.whitepaper-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  max-width: 100vw;
+
+  .content {
+    padding: 3.6rem;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    border-top: 1px solid $accent-color;
+    border-bottom: 1px solid $accent-color;
+
+    h3 {
+      font-family: "Integral CF", sans-serif;
+      font-size: 2rem;
+      margin: 0;
+
+      color: white;
+
+      .highlighted-text {
+        color: $accent-color;
+        font-weight: bold;
+      }
+    }
+
+    .actions {
+      display: flex;
+      width: 100%;
+      max-width: 37rem;
+    }
+  }
+}
