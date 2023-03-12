@@ -97,9 +97,9 @@ function NavigationList() {
       </li>
 
       <li>
-        <button className="dapp-button">
+        <a href="/dapp" className="dapp-button">
           <span>Launch Dapp</span>
-        </button>
+        </a>
       </li>
     </ul>
   );

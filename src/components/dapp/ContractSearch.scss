@@ -1,0 +1,43 @@
+$accent-color: #f00031;
+
+.contract-search {
+  max-width: 1376px;
+
+  padding: 1rem;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  .search-container {
+    position: relative;
+    height: 75px;
+    background: linear-gradient(to right, $accent-color 0%, black 50%, $accent-color 100%);
+    border-radius: 25px;
+    padding: 1px;
+  }
+
+  .search-box {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    margin: 0;
+    display: block;
+    background: black;
+    border: none;
+    color: $accent-color;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 15px;
+    background: transparent;
+    border: transparent;
+
+    img {
+      display: block;
+    }
+  }
+}
