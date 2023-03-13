@@ -5,7 +5,9 @@ function DAPPHeader() {
   return (
     <div className="dapp-header">
       <div className="brand-logo">
-        <img src={DegenBotLogo} alt="DegenBot Logo" />
+        <a href="/?portal=false">
+          <img src={DegenBotLogo} alt="DegenBot Logo" />
+        </a>
       </div>
 
       <nav className="site-nav">

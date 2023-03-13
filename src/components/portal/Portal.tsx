@@ -1,5 +1,5 @@
 import "./Portal.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Portal and SiteMap uses the same prop image.
 import PortalPropImage from "../../assets/images/SiteMapProp.png";
@@ -20,6 +20,15 @@ function Portal(props: React.PropsWithChildren) {
       opacity: 1,
     },
   });
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const portalQueryParam = urlParams.get("portal");
+
+    if (portalQueryParam === "false") {
+      setPortalState("open");
+    }
+  }, []);
 
   function handlePortalEnterClick() {
     setPortalElementAnimationProperties((prevState) => ({
