@@ -2,7 +2,7 @@ $accent-color: #f00031;
 
 .contract-limit-orders {
   position: relative;
-  background: black;
+  // background: black;
 
   padding: 2.75rem 3rem;
   border-radius: 1.5rem;
@@ -11,14 +11,17 @@ $accent-color: #f00031;
     padding: 2rem 1rem;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: -0.5px;
-    background: linear-gradient(45deg, $accent-color 0%, black 30%, $accent-color 80%, black 100%);
-    z-index: -1;
-    border-radius: 1.5rem;
-  }
+  border: 0.5px solid $accent-color;
+  backdrop-filter: blur(5px);
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   inset: -0.5px;
+  //   background: linear-gradient(45deg, $accent-color 0%, black 30%, $accent-color 80%, black 100%);
+  //   z-index: -1;
+  //   border-radius: 1.5rem;
+  // }
 
   .header {
     display: flex;
