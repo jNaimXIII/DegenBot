@@ -1,7 +1,8 @@
 $accent-color: #f00031;
 
 .contract-search {
-  max-width: 1376px;
+  // max-width: 1376px;
+  max-width: calc(1740px + 2rem);
 
   padding: 1rem;
 
@@ -38,6 +39,11 @@ $accent-color: #f00031;
     font-size: 1.25rem;
     line-height: 101%;
     padding: 0.5rem 2.75rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      padding: 0.5rem 1.75rem;
+    }
 
     &::placeholder {
       color: rgba($color: $accent-color, $alpha: 0.5);

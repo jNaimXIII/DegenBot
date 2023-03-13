@@ -1,0 +1,75 @@
+$accent-color: #f00031;
+
+.contract-limit-orders {
+  position: relative;
+  background: black;
+
+  padding: 2.75rem 3rem;
+  border-radius: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.5px;
+    background: linear-gradient(45deg, $accent-color 0%, black 30%, $accent-color 80%, black 100%);
+    z-index: -1;
+    border-radius: 1.5rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 3.5rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
+
+    .card-title,
+    .action-button {
+      font-family: "Integral CF", sans-serif;
+      color: white;
+      line-height: 101%;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .action-button {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      border: none;
+      background: $accent-color;
+      padding: 0.3rem 1.5rem;
+
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: 768px) {
+        font-size: 0.6rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 5px $accent-color;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+}

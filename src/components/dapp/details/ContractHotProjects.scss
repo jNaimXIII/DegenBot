@@ -1,0 +1,48 @@
+$accent-color: #f00031;
+
+.contract-hot-projects {
+  position: relative;
+  background: black;
+
+  padding: 2.75rem 3rem;
+  border-radius: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.5px;
+    background: linear-gradient(45deg, $accent-color 0%, black 30%, $accent-color 80%, black 100%);
+    z-index: -1;
+    border-radius: 1.5rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 3.5rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-family: "Integral CF", sans-serif;
+      color: white;
+      line-height: 101%;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.25rem;
+  }
+}

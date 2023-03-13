@@ -1,0 +1,53 @@
+$success-green: #17ad37;
+$faded-gray: #8392ab;
+
+.contract-hot-project-item {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .token {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+
+    @media (max-width: 768px) {
+      gap: 1rem;
+    }
+
+    .icon {
+      height: 28px;
+    }
+
+    .label {
+      // font-size: 0.75rem;
+      color: white;
+    }
+  }
+
+  .diff-value,
+  .time,
+  .date,
+  .value {
+    // font-size: 0.75rem;
+  }
+
+  .diff-value.positive {
+    color: $success-green;
+  }
+
+  .time,
+  .date {
+    color: $faded-gray;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .value {
+    color: white;
+    font-weight: 600;
+  }
+}

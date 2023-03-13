@@ -4,11 +4,14 @@ $accent-color: #f00031;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+  max-width: calc(1740px + 2rem);
 
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
 
   .site-nav {

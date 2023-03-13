@@ -1,0 +1,71 @@
+$accent-color: #f00031;
+
+.sniper-order-configuration {
+  position: relative;
+  background: black;
+  border-radius: 1.5rem;
+
+  // max-width: calc(1376px - 2rem);
+  max-width: calc(1740px);
+  margin: auto;
+
+  padding: 1.75rem 2.25rem;
+
+  font-family: "Integral CF", sans-serif;
+  color: white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.5px;
+    border-radius: 1.5rem;
+    background: linear-gradient(45deg, $accent-color 0%, black 50%, $accent-color 100%);
+    z-index: -1;
+  }
+
+  .header,
+  .header .token {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    .label {
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      line-height: 101%;
+      color: $accent-color;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .token {
+      gap: 0.4rem;
+
+      .name,
+      .sign {
+        font-size: 1.25rem;
+        line-height: 101%;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+
+      .sign {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
