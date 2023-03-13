@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [mobileNavigationState, setMobileNavigationState] = useState<"shown" | "collapsed">(
@@ -97,9 +98,9 @@ function NavigationList() {
       </li>
 
       <li>
-        <a href="/dapp" className="dapp-button">
+        <Link to={"/dapp"} className="dapp-button">
           <span>Launch Dapp</span>
-        </a>
+        </Link>
       </li>
     </ul>
   );
