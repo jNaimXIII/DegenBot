@@ -11,9 +11,19 @@ $accent-color: #f00031;
   .search-container {
     position: relative;
     height: 75px;
-    background: linear-gradient(to right, $accent-color 0%, black 50%, $accent-color 100%);
+    background: linear-gradient(
+      75deg,
+      $accent-color 0%,
+      black 60%,
+      black 90%,
+      rgba($color: $accent-color, $alpha: 0.4)
+    );
     border-radius: 25px;
-    padding: 1px;
+    padding: 0.5px;
+
+    @media (max-width: 768px) {
+      height: 50px;
+    }
   }
 
   .search-box {
@@ -24,9 +34,14 @@ $accent-color: #f00031;
     display: block;
     background: black;
     border: none;
-    color: $accent-color;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
+    color: rgba($color: $accent-color, $alpha: 0.5);
+    font-size: 1.25rem;
+    line-height: 101%;
+    padding: 0.5rem 2.75rem;
+
+    &::placeholder {
+      color: rgba($color: $accent-color, $alpha: 0.5);
+    }
   }
 
   .search-icon {
@@ -35,6 +50,10 @@ $accent-color: #f00031;
     top: 15px;
     background: transparent;
     border: transparent;
+
+    @media (max-width: 768px) {
+      top: 2px;
+    }
 
     img {
       display: block;

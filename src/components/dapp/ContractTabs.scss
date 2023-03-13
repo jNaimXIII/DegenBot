@@ -1,0 +1,49 @@
+$accent-color: #f00031;
+
+.contract-tab-navigation {
+  margin: 3rem 0;
+
+  .navigation-list {
+    display: flex;
+    gap: 3.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    list-style: none;
+    padding-left: 0;
+
+    @media (max-width: 768px) {
+      gap: 1rem;
+    }
+
+    .navigation-item {
+      text-align: center;
+
+      span {
+        color: rgba($color: #ffffff, $alpha: 0.2);
+
+        font-family: "Integral CF";
+        font-size: 1.5rem;
+        line-height: 101%;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $accent-color;
+          opacity: 1;
+          cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      span.active {
+        color: $accent-color;
+        opacity: 1;
+      }
+    }
+  }
+}

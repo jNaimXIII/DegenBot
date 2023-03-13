@@ -10,7 +10,7 @@ function ContractSearch() {
   return (
     <div className="contract-search">
       <form className="search-container" onSubmit={handleSearchSubmit}>
-        <input className="search-box" type="text" />
+        <input className="search-box" type="text" placeholder="CONTRACT ADDRESS" />
         <button type="submit" className="search-icon">
           <img src={DAPPSearch} alt="DAPPSearch Icon" />
         </button>
