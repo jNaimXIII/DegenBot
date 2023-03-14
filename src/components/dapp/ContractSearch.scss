@@ -12,13 +12,16 @@ $accent-color: #f00031;
   .search-container {
     position: relative;
     height: 75px;
-    background: linear-gradient(
-      75deg,
-      $accent-color 0%,
-      black 60%,
-      black 90%,
-      rgba($color: $accent-color, $alpha: 0.4)
-    );
+    // background: linear-gradient(
+    //   75deg,
+    //   $accent-color 0%,
+    //   black 60%,
+    //   black 90%,
+    //   rgba($color: $accent-color, $alpha: 0.4)
+    // );
+    border: 0.5px solid $accent-color;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     padding: 0.5px;
 
@@ -33,7 +36,8 @@ $accent-color: #f00031;
     border-radius: 25px;
     margin: 0;
     display: block;
-    background: black;
+    // background: black;
+    background: rgba(0, 0, 0, 0.2);
     border: none;
     color: rgba($color: $accent-color, $alpha: 0.5);
     font-size: 1.25rem;

@@ -13,7 +13,15 @@ $accent-color: #f00031;
     list-style: none;
     padding-left: 0;
 
+    @media (max-width: 1025px) {
+      flex-direction: column;
+    }
+
     @media (max-width: 768px) {
+      gap: 2rem;
+    }
+
+    @media (max-width: 512px) {
       gap: 1rem;
     }
 
@@ -35,14 +43,35 @@ $accent-color: #f00031;
           cursor: pointer;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 986) {
           font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+
+        @media (max-width: 512px) {
+          font-size: 0.8rem;
         }
       }
 
       span.active {
         color: $accent-color;
         opacity: 1;
+        padding: 1.5rem 2rem;
+        // background: linear-gradient(to right, $accent-color, black, $accent-color);
+        background: rgba($color: $accent-color, $alpha: 0.1);
+        border: 0.5px solid $accent-color;
+        border-radius: 1.5rem;
+
+        @media (max-width: 986px) {
+          padding: 1rem 1.5rem;
+        }
+
+        @media (max-width: 512px) {
+          padding: 0.6rem 1rem;
+        }
       }
     }
   }

@@ -2,7 +2,7 @@ $accent-color: #f00031;
 
 .sniper-order-configuration {
   position: relative;
-  background: black;
+  // background: black;
   border-radius: 1.5rem;
 
   // max-width: calc(1376px - 2rem);
@@ -14,14 +14,18 @@ $accent-color: #f00031;
   font-family: "Integral CF", sans-serif;
   color: white;
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: -0.5px;
-    border-radius: 1.5rem;
-    background: linear-gradient(45deg, $accent-color 0%, black 50%, $accent-color 100%);
-    z-index: -1;
-  }
+  border: 0.5px solid $accent-color;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   inset: -0.5px;
+  //   border-radius: 1.5rem;
+  //   background: linear-gradient(45deg, $accent-color 0%, black 50%, $accent-color 100%);
+  //   z-index: -1;
+  // }
 
   .header,
   .header .token {
