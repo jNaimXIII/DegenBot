@@ -1,0 +1,18 @@
+$accent-color: #f00031;
+
+.configuration-action-button {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 101%;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background: $accent-color;
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+
+  border: transparent;
+  padding: 1.25rem 1.5rem;
+}

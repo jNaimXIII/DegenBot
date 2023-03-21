@@ -67,6 +67,12 @@ $accent-color: #f00031;
 
     img {
       display: block;
+      transition: all 0.3s easen-in-out;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(350%);
+      }
     }
   }
 }

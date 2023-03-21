@@ -1,0 +1,62 @@
+$accent-color: #f00031;
+
+.configuration-button-input {
+  display: flex;
+  flex-direction: column;
+
+  .input-button {
+    margin-bottom: 0.75rem;
+
+    color: white;
+    font-family: "Integral CF";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+
+    line-height: 101%;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    // background: rgba(240, 0, 49, 0.6);
+    background: $accent-color;
+    backdrop-filter: blur(14px);
+    border-radius: 16px;
+    border: transparent;
+    padding: 1.25rem;
+  }
+
+  .text-input {
+    border: 1px solid $accent-color;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    line-height: 101%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.configuration-button-input.oneline {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+
+  .input-button {
+    margin-bottom: 0;
+  }
+
+  .text-input {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}

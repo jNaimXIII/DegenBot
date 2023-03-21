@@ -1,0 +1,31 @@
+$accent-color: #f00031;
+
+.order-configuration-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .item-label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 101%;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .configuration-content {
+    display: flex;
+    gap: 2.5rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    & > * {
+      flex: 1;
+    }
+  }
+}
