@@ -14,8 +14,11 @@ $accent-color: #f00031;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 1rem;
+
+    @media (max-width: 512px) {
+      flex-direction: column;
+    }
 
     .action-button {
       border-radius: 1.5rem;
@@ -25,6 +28,10 @@ $accent-color: #f00031;
       font-weight: 600;
       cursor: pointer;
       backdrop-filter: blur(11.5px);
+
+      @media (max-width: 512px) {
+        width: 100%;
+      }
     }
 
     .action-button.cancel {
