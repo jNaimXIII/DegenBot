@@ -3,11 +3,10 @@ import ContractLimitOrderItem from "./ContractLimitOrderItem";
 import { useState } from "react";
 import GlobalModal from "../../global/GlobalModal";
 import ConnectWalletModal from "./ConnectWalletModal";
+import { useWalletConnectStore } from "../../../stores/walletConnect";
 
 function ContractLimitOrders() {
-  // NOTE: this state is being separately managed in the DAPPHeader and the ContractLimitOrders components
-  // TODO: merge the following state using context for a global access point
-  const [hasConnectedWallet, setHasConnectedWallet] = useState(false);
+  const walletConnectStore = useWalletConnectStore();
   const [showConnectWalletModal, setShowConnectWalletModal] = useState(false);
 
   function handleConnectWalletButtonClick() {
@@ -19,7 +18,7 @@ function ContractLimitOrders() {
   }
 
   function handleConnectWalletModalSuccess() {
-    setHasConnectedWallet(true);
+    walletConnectStore.setWalletConnectedStatus("connected");
     handleConnectWalletModalClose();
   }
 
@@ -30,7 +29,7 @@ function ContractLimitOrders() {
       <div className="header">
         <span className="card-title">Current Positions / Limit Orders</span>
 
-        {!hasConnectedWallet ? (
+        {walletConnectStore.walletConnectStatus === "disconnected" ? (
           <button className="action-button" onClick={handleConnectWalletButtonClick}>
             Connect Wallet
           </button>
@@ -52,7 +51,7 @@ function ContractLimitOrders() {
       </div>
 
       <div className="content">
-        {hasConnectedWallet && (
+        {walletConnectStore.walletConnectStatus === "connected" && (
           <>
             <ContractLimitOrderItem editViewMode />
             <ContractLimitOrderItem />

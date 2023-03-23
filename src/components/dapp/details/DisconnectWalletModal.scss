@@ -1,0 +1,40 @@
+$accent-color: #f00031;
+
+.disconnect-confirm {
+  text-align: center;
+
+  .warn-text {
+    font-family: "Integral CF", sans-serif;
+    font-size: 1.25rem;
+    color: white;
+    margin: 4rem 0;
+  }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .action-button {
+      border-radius: 1.5rem;
+      padding: 1.5rem 4.2rem;
+      font-size: 1.125rem;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(11.5px);
+    }
+
+    .action-button.cancel {
+      border: 1px solid rgba($color: #000000, $alpha: 1);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .action-button.confirm {
+      border: 1px solid $accent-color;
+      background: $accent-color;
+    }
+  }
+}

@@ -6,7 +6,6 @@ type Props = {
 };
 
 function ConnectWalletModal(props: Props) {
-  // NOTE: this is a temporary solution to handle the wallet connect success
   function handleWalletConnectSuccess() {
     props.onSuccess && props.onSuccess();
   }

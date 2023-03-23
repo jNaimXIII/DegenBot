@@ -2,13 +2,15 @@ import "./DAPPHeader.scss";
 import DegenBotLogo from "../../assets/images/DegenBotLogo.png";
 import { useState } from "react";
 import ConnectWalletModal from "../dapp/details/ConnectWalletModal";
+import DisconnectWalletModal from "../dapp/details/DisconnectWalletModal";
 import GlobalModal from "./GlobalModal";
+import { useWalletConnectStore } from "../../stores/walletConnect";
 
 function DAPPHeader() {
-  // NOTE: this state is being separately managed in the DAPPHeader and the ContractLimitOrders components
-  // TODO: merge the following state using context for a global access point
-  const [hasConnectedWallet, setHasConnectedWallet] = useState(false);
+  const walletConnectStore = useWalletConnectStore();
+
   const [showConnectWalletModal, setShowConnectWalletModal] = useState(false);
+  const [showDisconnectWalletModal, setShowDisconnectWalletModal] = useState(false);
 
   function handleConnectWalletButtonClick() {
     setShowConnectWalletModal(true);
@@ -18,9 +20,22 @@ function DAPPHeader() {
     setShowConnectWalletModal(false);
   }
 
-  function handleConnectWalletModalSuccess() {
-    setHasConnectedWallet(true);
-    handleConnectWalletModalClose();
+  function handleDisconnectWalletButtonClick() {
+    setShowDisconnectWalletModal(true);
+  }
+
+  function handleDisconnectWalletModalClose() {
+    setShowDisconnectWalletModal(false);
+  }
+
+  function handleWalletConnectSuccess() {
+    walletConnectStore.setWalletConnectedStatus("connected");
+    setShowConnectWalletModal(false);
+  }
+
+  function handleWalletDisconnectSuccess() {
+    walletConnectStore.setWalletConnectedStatus("disconnected");
+    setShowDisconnectWalletModal(false);
   }
 
   return (
@@ -35,9 +50,17 @@ function DAPPHeader() {
         <DAPPNavigationList />
       </nav>
 
-      <button onClick={handleConnectWalletButtonClick} className="connect-wallet-button">
-        <span>Connect Wallet</span>
-      </button>
+      {walletConnectStore.walletConnectStatus === "disconnected" && (
+        <button onClick={handleConnectWalletButtonClick} className="connect-wallet-button">
+          <span>Connect Wallet</span>
+        </button>
+      )}
+
+      {walletConnectStore.walletConnectStatus === "connected" && (
+        <button onClick={handleDisconnectWalletButtonClick} className="disconnect-wallet-button">
+          <span>Disconnect Wallet</span>
+        </button>
+      )}
 
       {showConnectWalletModal && (
         <GlobalModal
@@ -45,7 +68,16 @@ function DAPPHeader() {
           isOpen={showConnectWalletModal}
           onCancel={handleConnectWalletModalClose}
         >
-          <ConnectWalletModal onSuccess={handleConnectWalletModalSuccess} />
+          <ConnectWalletModal onSuccess={handleWalletConnectSuccess} />
+        </GlobalModal>
+      )}
+      {showDisconnectWalletModal && (
+        <GlobalModal
+          name="Disconnect Wallet"
+          isOpen={showDisconnectWalletModal}
+          onCancel={handleDisconnectWalletModalClose}
+        >
+          <DisconnectWalletModal onSuccess={handleWalletDisconnectSuccess} />
         </GlobalModal>
       )}
     </div>

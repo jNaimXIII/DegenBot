@@ -56,7 +56,8 @@ $accent-color: #f00031;
     }
   }
 
-  .connect-wallet-button {
+  .connect-wallet-button,
+  .disconnect-wallet-button {
     font-family: "Integral CF", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
@@ -78,8 +79,22 @@ $accent-color: #f00031;
       display: block;
       font-size: 0.9rem;
 
-      background: $accent-color;
       padding: 0.8125rem 1.5rem;
+    }
+  }
+
+  .connect-wallet-button {
+    span {
+      background: $accent-color;
+    }
+  }
+
+  .disconnect-wallet-button {
+    border-radius: 1.5rem;
+
+    span {
+      border-radius: 1.5rem;
+      background: black;
     }
   }
 }
