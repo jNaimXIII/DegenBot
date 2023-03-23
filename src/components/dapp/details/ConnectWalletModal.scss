@@ -1,0 +1,40 @@
+$accent-color: #f00031;
+
+.wallets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  .wallet-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba($color: black, $alpha: 0.5);
+    padding: 2.5rem 3.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(14px);
+    border: 1px solid $accent-color;
+
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($color: black, $alpha: 0.1);
+    }
+
+    .wallet-icon {
+      height: 14rem;
+    }
+
+    .wallet-name {
+      font-size: 1.5rem;
+      color: white;
+      font-family: "Integral CF";
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 101%;
+    }
+  }
+}

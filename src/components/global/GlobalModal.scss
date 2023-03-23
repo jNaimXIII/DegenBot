@@ -1,0 +1,38 @@
+$accent-color: #f00031;
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  // margin-top: 8rem;
+  height: 100%;
+
+  .modal-container {
+    // background: rgba($color: $accent-color, $alpha: 0.5);
+    background: rgba(73, 1, 1, 0.5);
+    padding: 4rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(14px);
+    border: 1px solid $accent-color;
+
+    .modal-header {
+      color: white;
+      font-family: "Integral CF", sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 101%;
+      text-align: center;
+    }
+
+    .modal-content {
+    }
+  }
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
+}

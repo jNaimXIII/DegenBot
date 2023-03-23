@@ -1,0 +1,70 @@
+$accent-color: #f00031;
+
+.tp-or-sl-form {
+  padding: 3rem 0;
+
+  .tp-or-sl-form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    font-family: "Integral CF", sans-serif;
+    font-size: 1.125rem;
+
+    .label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .content {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      input {
+        border: 1px solid $accent-color;
+        border-radius: 1.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(11.5px);
+        font-size: 1.125rem;
+        padding: 0.8rem;
+        width: 170px;
+      }
+
+      .sub {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    .action-button {
+      border-radius: 1.5rem;
+      padding: 1.5rem 4.2rem;
+      font-size: 1.125rem;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(11.5px);
+    }
+
+    .action-button.cancel {
+      border: 1px solid rgba($color: #000000, $alpha: 1);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .action-button.confirm {
+      border: 1px solid $accent-color;
+      background: $accent-color;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 2.75rem 0;
+  }
+
+  .spacer {
+    margin: 3.5rem 0;
+  }
+}

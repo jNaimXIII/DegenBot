@@ -1,12 +1,29 @@
 import "./ContractLimitOrderItem.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import GlobalModal from "../../global/GlobalModal";
+import ContractTPorSLForm from "./ContractTPorSLForm";
 
 type Props = {
   editViewMode?: boolean;
 };
 
 function ContractLimitOrderItem(props: Props) {
+  const [showAddTPorSLModal, setShowAddTPorSLModal] = useState(false);
+
+  function handleAddTPorSLButtonClick() {
+    setShowAddTPorSLModal(true);
+  }
+
+  function handleAddTPorSLModalClose() {
+    setShowAddTPorSLModal(false);
+  }
+
+  function handleAddTPorSLModalSuccess() {
+    handleAddTPorSLModalClose();
+  }
+
   return (
     <div className="contract-limit-order-item">
       <div className="stat-item">
@@ -46,7 +63,22 @@ function ContractLimitOrderItem(props: Props) {
           </button>
         </div>
       ) : (
-        <button className="add-button">Add TP/SL</button>
+        <button className="add-button" onClick={handleAddTPorSLButtonClick}>
+          Add TP/SL
+        </button>
+      )}
+
+      {showAddTPorSLModal && (
+        <GlobalModal
+          name="Take Profit / Stop Loss"
+          isOpen={showAddTPorSLModal}
+          onCancel={handleAddTPorSLModalClose}
+        >
+          <ContractTPorSLForm
+            onCancel={handleAddTPorSLModalClose}
+            onSuccess={handleAddTPorSLModalSuccess}
+          />
+        </GlobalModal>
       )}
     </div>
   );
