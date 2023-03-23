@@ -12,6 +12,7 @@ function ContractSearch() {
       <form className="search-container" onSubmit={handleSearchSubmit}>
         <input className="search-box" type="text" placeholder="CONTRACT ADDRESS" />
         <button type="submit" className="search-icon">
+          <span className="hover-text">Let's Snipe</span>
           <img src={DAPPSearch} alt="DAPPSearch Icon" />
         </button>
       </form>

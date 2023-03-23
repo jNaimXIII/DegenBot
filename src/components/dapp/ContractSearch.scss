@@ -60,18 +60,35 @@ $accent-color: #f00031;
     top: 15px;
     background: transparent;
     border: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 
     @media (max-width: 768px) {
       top: 2px;
     }
 
+    &:hover {
+      .hover-text {
+        opacity: 1;
+      }
+    }
+
+    .hover-text {
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      font-family: "Integral CF", sans-serif;
+      color: rgba($color: white, $alpha: 0.5);
+    }
+
     img {
       display: block;
-      transition: all 0.3s easen-in-out;
+      transition: all 0.3s ease-in-out;
       cursor: pointer;
 
       &:hover {
-        filter: brightness(350%);
+        filter: saturate(10) brightness(1.5);
+        transform: scale(1.1);
       }
     }
   }
