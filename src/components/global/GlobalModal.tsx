@@ -15,7 +15,6 @@ function GlobalModal(props: Props) {
       className="modal"
       overlayClassName="modal-overlay"
       onRequestClose={props.onCancel}
-      preventScroll
       ariaHideApp={false}
     >
       <div className="modal-container">
