@@ -1,0 +1,79 @@
+$accent-color: #f00031;
+$green-accent-color: #34c759;
+
+.wallet-balance-card {
+  grid-row: 1/ 2;
+  grid-column: 2/ 3;
+
+  @media (max-width: 1540px) {
+    grid-row: 2/ 3;
+    grid-column: 1/ 1;
+  }
+
+  border: 1px solid $accent-color;
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .content {
+    color: white;
+    font-family: "Integral CF", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    .title {
+    }
+
+    .amount {
+      font-size: 3.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .currency {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .logo {
+      }
+
+      .name {
+      }
+    }
+
+    .pnl {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      padding: 1.125rem 3rem;
+
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 3rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      .label {
+        color: $green-accent-color;
+      }
+    }
+  }
+
+  .chart {
+    height: 220px;
+    padding: 1rem 0;
+  }
+}

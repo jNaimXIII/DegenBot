@@ -1,0 +1,150 @@
+$accent-color: #f00031;
+
+.wallets-card {
+  grid-row: 1/ 2;
+  grid-column: 1/ 2;
+
+  @media (max-width: 1540px) {
+    grid-row: 1/ 2;
+    grid-column: 1/ 1;
+  }
+
+  font-family: "Integral CF", sans-serif;
+  color: white;
+
+  border: 1px solid $accent-color;
+  border-radius: 1.5rem;
+  padding: 3.75rem;
+
+  @media (max-width: 768px) {
+    padding: 2.75rem;
+  }
+
+  @media (max-width: 512px) {
+    padding: 1.25rem;
+  }
+
+  .wallets-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-title {
+      margin: 0;
+      color: $accent-color;
+      font-size: 2rem;
+      line-height: 101%;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .content {
+    margin: 2rem 0;
+
+    table {
+      thead {
+        th {
+          color: rgba(255, 255, 255, 0.5);
+          padding-bottom: 2rem;
+          font-size: 1.25rem;
+
+          @media (max-width: 512px) {
+            font-size: 1rem;
+          }
+        }
+
+        .wallet-heading {
+          text-align: left;
+        }
+
+        .balance-heading {
+          text-align: center;
+        }
+      }
+
+      tbody {
+        tr:not(.first) {
+          color: darken(white, 60%);
+
+          .wallet-info-col {
+            .wallet-name {
+              color: darken($accent-color, 20%);
+            }
+          }
+        }
+
+        td {
+          padding: 0.5rem 0;
+        }
+
+        .wallet-info-col {
+          width: 100%;
+
+          .wallet-name {
+            display: inline-block;
+            margin-right: 1rem;
+            color: $accent-color;
+            font-size: 1.25rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.25rem;
+            }
+
+            @media (max-width: 512px) {
+              font-size: 1rem;
+            }
+          }
+
+          .wallet-address {
+            font-size: 1.5rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.25rem;
+            }
+
+            @media (max-width: 512px) {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .wallet-balance-col {
+          text-align: center;
+          font-size: 1.5rem;
+
+          @media (max-width: 768px) {
+            font-size: 1.25rem;
+          }
+
+          @media (max-width: 512px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .wallet-card-footer {
+  }
+
+  .action-button {
+    font-family: "Integral CF", sans-serif;
+    border: none;
+    background: $accent-color;
+    color: white;
+    padding: 0.8125rem 2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($accent-color, 10%);
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.5rem 1rem;
+    }
+  }
+}

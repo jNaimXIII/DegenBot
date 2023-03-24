@@ -1,0 +1,17 @@
+.wallets-and-profits-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+
+  max-width: 1740px;
+  margin: 0 auto;
+
+  @media (max-width: 1540px) {
+    display: flex;
+    flex-direction: column;
+
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+  }
+}
