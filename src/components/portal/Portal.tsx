@@ -6,29 +6,69 @@ import PortalPropImage from "../../assets/images/SiteMapProp.png";
 import DegensCarousel from "../global/DegensCarousel";
 import CallToAction from "../hero/CallToAction";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+
+const initialPortalAnimationState = {
+  beltTop: {
+    y: 0 as number | number[],
+  },
+  beltBottom: {
+    y: 0 as number | number[],
+  },
+  content: {
+    opacity: 1,
+  },
+};
 
 function Portal(props: React.PropsWithChildren) {
+  const location = useLocation();
+
   const [portalState, setPortalState] = useState<"open" | "closed">("closed");
-  const [portalElementAnimationProperties, setPortalElementAnimationProperties] = useState({
-    beltTop: {
-      y: 0 as number | number[],
-    },
-    beltBottom: {
-      y: 0 as number | number[],
-    },
-    content: {
-      opacity: 1,
-    },
-  });
+  const [portalElementAnimationProperties, setPortalElementAnimationProperties] = useState(
+    initialPortalAnimationState
+  );
+  const [shouldPortalAutoplay, setShouldPortalAutoplay] = useState(false);
+
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   const portalQueryParam = urlParams.get("portal");
+  //
+  //   if (portalQueryParam === "false") {
+  //     setPortalState("open");
+  //   }
+  // }, []);
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
+    setPortalState("closed");
+    setPortalElementAnimationProperties(initialPortalAnimationState);
+
+    const urlParams = new URLSearchParams(location.search);
     const portalQueryParam = urlParams.get("portal");
 
     if (portalQueryParam === "false") {
-      setPortalState("open");
+      setShouldPortalAutoplay(true);
+    } else {
+      setShouldPortalAutoplay(false);
     }
-  }, []);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (shouldPortalAutoplay) {
+      function activatePortalAfterDelay() {
+        handlePortalEnterClick();
+      }
+
+      const timeout = setTimeout(() => {
+        activatePortalAfterDelay();
+      }, 700);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+
+    return () => {};
+  }, [shouldPortalAutoplay, location.pathname]);
 
   function handlePortalEnterClick() {
     setPortalElementAnimationProperties((prevState) => ({
@@ -73,15 +113,17 @@ function Portal(props: React.PropsWithChildren) {
           >
             <img className="portal-prop-image" src={PortalPropImage} alt="Portal Prop Image" />
 
-            <div className="actions">
-              <CallToAction
-                label="Enter"
-                filled
-                onClick={handlePortalEnterClick}
-                fullWidth
-                compact
-              />
-            </div>
+            {!shouldPortalAutoplay && (
+              <div className="actions">
+                <CallToAction
+                  label="Enter"
+                  filled
+                  onClick={handlePortalEnterClick}
+                  fullWidth
+                  compact
+                />
+              </div>
+            )}
           </motion.div>
 
           <motion.div

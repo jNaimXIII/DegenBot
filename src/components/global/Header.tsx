@@ -98,7 +98,7 @@ function NavigationList() {
       </li>
 
       <li>
-        <Link to={"/dapp"} className="dapp-button">
+        <Link to={"/dapp?portal=false"} className="dapp-button">
           <span>Launch Dapp</span>
         </Link>
       </li>

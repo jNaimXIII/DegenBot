@@ -1,5 +1,7 @@
 .portal {
   min-height: 100vh;
+  // CAUTION: THIS IS FINE
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;

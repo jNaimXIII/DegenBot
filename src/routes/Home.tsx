@@ -11,13 +11,12 @@ import Apps from "../components/app/Apps";
 import AppBanner from "../components/app/AppBanner";
 import SiteMap from "../components/sitemap/SiteMap";
 import DegensCarousel from "../components/global/DegensCarousel";
-import Portal from "../components/portal/Portal";
 
 // import VantaBackground from "./components/global/VantaBackground";
 
 function App() {
   return (
-    <Portal>
+    <>
       {/*<VantaBackground />*/}
       <Header />
 
@@ -44,7 +43,7 @@ function App() {
       </main>
 
       <Footer />
-    </Portal>
+    </>
   );
 }
 

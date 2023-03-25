@@ -8,11 +8,19 @@ import "./main.scss";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Portal>
+        <Home />
+      </Portal>
+    ),
   },
   {
     path: "/dapp",
-    element: <DAPP />,
+    element: (
+      <Portal>
+        <DAPP />
+      </Portal>
+    ),
   },
 ]);
 
@@ -34,6 +42,7 @@ import {
   Filler,
   BarElement,
 } from "chart.js";
+import Portal from "./components/portal/Portal";
 
 ChartJS.register(
   CategoryScale,
